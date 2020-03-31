@@ -1,0 +1,16 @@
+{
+  "configurations": {
+    "gdb: Launch": {
+      "adapter": "vscode-cpptools",
+      "configuration": {
+        "name": "gdb: Launch",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+        "cwd": "${workspaceRoot}",
+        "console": "integratedTerminal",
+        "MIMode": "gdb"
+      }
+    }
+  }
+}
