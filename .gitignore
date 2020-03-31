@@ -1,0 +1,5 @@
+.clangd
+.cache
+*.out
+*.o
+compile_commands.json
