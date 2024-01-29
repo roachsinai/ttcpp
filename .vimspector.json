@@ -1,14 +1,17 @@
+// https://github.com/puremourning/vimspector/tree/master/support/test
 {
   "configurations": {
-    "gdb: Launch": {
+    "gdb: launch": {
       "adapter": "vscode-cpptools",
       "configuration": {
         "name": "gdb: Launch",
         "type": "cppdbg",
         "request": "launch",
-        "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+        "justMyCode": false,
+        "program": "build/Debug/ready",
         "cwd": "${workspaceRoot}",
         "console": "integratedTerminal",
+        "miDebuggerPath": "/usr/bin/gdb",
         "MIMode": "gdb"
       }
     }
