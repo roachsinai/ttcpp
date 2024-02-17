@@ -7,6 +7,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=thread -fPIE -pie -g")
 # message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 
+list(PREPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+find_package(OpenBLAS REQUIRED)
+
 find_package(fmt)
 
 add_executable(ready tt.cpp)
@@ -18,4 +21,8 @@ add_custom_target(run
 
 target_compile_options(ready PUBLIC "-mavx2")
 
-target_link_libraries(ready fmt::fmt)
+include_directories(${OpenBLAS_INCLUDE_DIR})
+
+target_link_libraries(ready
+    ${OpenBLAS_LIB}
+    fmt::fmt)
